@@ -13,5 +13,8 @@ This is a very lightweight movie library
 * Pagination
 * Basic security
 
+## Clone this project
+`git clone https://github.com/arcanine525/web-assignment movies-library`
+
 ## Authors
 
