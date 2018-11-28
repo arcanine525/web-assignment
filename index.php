@@ -87,10 +87,10 @@
        
        		<div class="card mt-5">
 				<div class="card-header">
-					<h4>Top 10 movies of all time</h4>
+					<h4>Random movies</h4>
 				</div>
 				<div class="card-body" id="latestFeatures">
-					<?php require_once "includes/topMovies.php"; ?>
+					<?php require_once "includes/randomMovies.php"; ?>
 				</div>
 			</div>
         </main>

@@ -1,7 +1,7 @@
 <?php
 	require_once "database.php";
 
-	$query = 'SELECT * FROM `movie` ORDER BY `m_rdate` DESC LIMIT 3;';
+	$query = 'SELECT * FROM `movie` ORDER BY RAND() DESC LIMIT 3;';
 	$results = mysqli_query($con, $query);
 	$movies = mysqli_fetch_all($results, MYSQLI_ASSOC);
 
