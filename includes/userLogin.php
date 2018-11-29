@@ -5,7 +5,8 @@
 		$username = mysqli_real_escape_string($con, $_POST['username']);
 		//$password = hash('whirlpool', mysqli_real_escape_string($con, $_POST['password']));
         $password =  mysqli_real_escape_string($con, $_POST['password']);
-		$query = "SELECT * FROM user WHERE u_name = '$username' AND u_pass = '$password'";
+        $en_password = md5($password."pass");
+		$query = "SELECT * FROM user WHERE u_name = '$username' AND u_pass = '$en_password'";
 		$results = mysqli_query($con, $query);
 		session_start();
 		

@@ -148,14 +148,14 @@ function checkusername() {
     if (u != "") {
         status.innerHTML = '<b style="color:red;">checking...</b>';
         var hr = new XMLHttpRequest();
-        hr.open("POST", "checkUserRegister.php", true);
-        hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        hr.open("GET", "checkRegister.php?q=" + u, true);
+        //hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         hr.onreadystatechange = function () {
             if (hr.readyState == 4 && hr.status == 200) {
                 status.innerHTML = hr.responseText;
             }
-        }
-        var v = "name2check=" + u;
-        hr.send(v);
+        };
+        //var v = "name2check=" + u;
+        hr.send();
     }
 }

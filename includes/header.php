@@ -114,7 +114,7 @@
 									<div class="form-group">
 										<label for="signin-username" class="col-form-label">Username</label>
 										<input type="text" class="form-control" name="username" placeholder="Input a valid username" maxlength="20" id="signin-username" oninput="checkusername()" required>
-                                        <span id="usernamestatus"></span>
+
 									</div>
 									<div class="form-group">
 										<label for="passInput" class="col-form-label">Password</label>

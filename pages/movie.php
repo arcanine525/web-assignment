@@ -34,6 +34,14 @@ $g_query = 'SELECT g_title, m_title FROM movie NATURAL JOIN mgenre NATURAL JOIN 
 $g_results = mysqli_query($con, $g_query);
 $genres = mysqli_fetch_all($g_results, MYSQLI_ASSOC);
 
+$a_query = 'SELECT a_name, m_title FROM movie NATURAL JOIN movie_cast NATURAL JOIN actor WHERE m_id=' . $movieId . ';';
+$a_results = mysqli_query($con, $a_query);
+$actors = mysqli_fetch_all($a_results, MYSQLI_ASSOC);
+
+$d_query = 'SELECT d_name, m_title FROM movie NATURAL JOIN movie_direction NATURAL JOIN director WHERE m_id=' . $movieId . ';';
+$d_results = mysqli_query($con, $d_query);
+$directors = mysqli_fetch_all($d_results, MYSQLI_ASSOC);
+
 
 function formatTime($minutes)
 {
@@ -81,7 +89,15 @@ function formatTime($minutes)
                                     class="focus"><?php echo formatTime($movie['m_length']); ?></span></p>
                         <p><i class="fa fa-filter"></i> Categorie(s): <span
                                     class="focus"><?php foreach ($genres as $item) {
-                                    echo $item["g_title"] . ", ";
+                                    echo $item["g_title"] . " | ";
+                                } ?></span></p>
+                        <p><i class="fa fa-filter"></i> Actors: <span
+                                    class="focus"><?php foreach ($actors as $item) {
+                                    echo $item["a_name"] . " | ";
+                                } ?></span></p>
+                        <p><i class="fa fa-filter"></i> Directors: <span
+                                    class="focus"><?php foreach ($directors as $item) {
+                                    echo $item["d_name"] . " | ";
                                 } ?></span></p>
                         <p><i class="fa fa-calendar-alt"></i> Release date: <span
                                     class="focus"><?php echo date('Y - M - d', strtotime($movie['m_rdate'])); ?></span>
