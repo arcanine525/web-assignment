@@ -113,15 +113,16 @@
 							<div class="modal-body">
 									<div class="form-group">
 										<label for="signin-username" class="col-form-label">Username</label>
-										<input type="text" class="form-control" name="username" placeholder="Input a valid username" maxlength="20" id="signin-username" required>
+										<input type="text" class="form-control" name="username" placeholder="Input a valid username" maxlength="20" id="signin-username" oninput="checkusername()" required>
+                                        <span id="usernamestatus"></span>
 									</div>
 									<div class="form-group">
 										<label for="passInput" class="col-form-label">Password</label>
-										<input type="password" id="passInput" name="password" class="form-control" placeholder="Input a valid username" maxlength="15" minlength="5" required>
+										<input type="password" id="passInput" name="password" class="form-control" placeholder="Input a valid password" maxlength="15" minlength="5" required>
 									</div>
 									<div class="form-group">
 										<label for="signin-password" class="col-form-label">Password confirmation</label>
-										<input type="password" id="pConfInput" class="form-control" placeholder="Input a valid username" maxlength="15" minlength="5" id="signin-password" required>
+										<input type="password" id="pConfInput" class="form-control" placeholder="Re-enter your password" maxlength="15" minlength="5" id="signin-password" required>
 									</div>
 							</div>
 							<div class="modal-footer">
@@ -132,13 +133,13 @@
 					</div>
 				</div>
 			</div>
-       	
+
         	<div class="jumbotron text-center">
         		<img src="\movies-library\images\logo.svg" class="mx-auto d-block" style="width: 150px;" alt="Logo">
         		<h1 class="display-4">The movie library</h1>
         		<p class="text-secondary">The future of looking up movies</p>
         	</div>
-        	
+
         	<nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -158,17 +159,22 @@
 							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 								<a class="dropdown-item" href="\movies-library\pages\search.php?searchQuery=&filterCategory=Action">Action</a>
 								<a class="dropdown-item" href="\movies-library\pages\search.php?searchQuery=&filterCategory=Adventure">Adventure</a>
-								<a class="dropdown-item" href="\movies-library\pages\search.php?searchQuery=&filterCategory=Biography">Biography</a>
+								<a class="dropdown-item" href="\movies-library\pages\search.php?searchQuery=&filterCategory=Animation">Animation</a>
 								<a class="dropdown-item" href="\movies-library\pages\search.php?searchQuery=&filterCategory=Comedy">Comedy</a>
 								<a class="dropdown-item" href="\movies-library\pages\search.php?searchQuery=&filterCategory=Crime">Crime</a>
+								<a class="dropdown-item" href="\movies-library\pages\search.php?searchQuery=&filterCategory=Documentary">Documentary</a>
 								<a class="dropdown-item" href="\movies-library\pages\search.php?searchQuery=&filterCategory=Drama">Drama</a>
 								<a class="dropdown-item" href="\movies-library\pages\search.php?searchQuery=&filterCategory=Fantasy">Fantasy</a>
+								<a class="dropdown-item" href="\movies-library\pages\search.php?searchQuery=&filterCategory=Family">Family</a>
 								<a class="dropdown-item" href="\movies-library\pages\search.php?searchQuery=&filterCategory=History">History</a>
 								<a class="dropdown-item" href="\movies-library\pages\search.php?searchQuery=&filterCategory=Horror">Horror</a>
+								<a class="dropdown-item" href="\movies-library\pages\search.php?searchQuery=&filterCategory=Music">Music</a>
 								<a class="dropdown-item" href="\movies-library\pages\search.php?searchQuery=&filterCategory=Mystery">Mystery</a>
-								<a class="dropdown-item" href="\movies-library\pages\search.php?searchQuery=&filterCategory=Sci-fi">Sci-fi</a>
+                                <a class="dropdown-item" href="\movies-library\pages\search.php?searchQuery=&filterCategory=Romance">Romance</a>
+								<a class="dropdown-item" href="\movies-library\pages\search.php?searchQuery=&filterCategory=Science-Fiction">Science-Fiction</a>
 								<a class="dropdown-item" href="\movies-library\pages\search.php?searchQuery=&filterCategory=Romance">Romance</a>
 								<a class="dropdown-item" href="\movies-library\pages\search.php?searchQuery=&filterCategory=Thriller">Thriller</a>
+								<a class="dropdown-item" href="\movies-library\pages\search.php?searchQuery=&filterCategory=TV-Movie">TV-Movie</a>
 								<a class="dropdown-item" href="\movies-library\pages\search.php?searchQuery=&filterCategory=War">War</a>
 								<a class="dropdown-item" href="\movies-library\pages\search.php?searchQuery=&filterCategory=Western">Western</a>
 							</div>
@@ -209,7 +215,6 @@
 								<i class="fa fa-user fa-lg"></i> <?php echo $_SESSION['username']; ?>
 							</button>
 							<div class="dropdown-menu">
-								<a class="dropdown-item" href="\movies-library\pages\account.php">My account</a>
 								<a class="dropdown-item" href="\movies-library\pages\library.php">My library</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="\movies-library\includes\userLogout.php"><i class="fa fa-sign-out-alt"></i> Logout</a>
