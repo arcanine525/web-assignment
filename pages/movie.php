@@ -91,11 +91,11 @@ function formatTime($minutes)
                                     class="focus"><?php foreach ($genres as $item) {
                                     echo $item["g_title"] . " | ";
                                 } ?></span></p>
-                        <p><i class="fa fa-filter"></i> Actors: <span
+                        <p><i class="fas fa-users"></i> Actors: <span
                                     class="focus"><?php foreach ($actors as $item) {
                                     echo $item["a_name"] . " | ";
                                 } ?></span></p>
-                        <p><i class="fa fa-filter"></i> Directors: <span
+                        <p><i class="fas fa-users"></i> Directors: <span
                                     class="focus"><?php foreach ($directors as $item) {
                                     echo $item["d_name"] . " | ";
                                 } ?></span></p>

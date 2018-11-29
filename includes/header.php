@@ -113,7 +113,7 @@
 							<div class="modal-body">
 									<div class="form-group">
 										<label for="signin-username" class="col-form-label">Username</label>
-										<input type="text" class="form-control" name="username" placeholder="Input a valid username" maxlength="20" id="signin-username" oninput="checkusername()" required>
+										<input type="text" class="form-control" name="username" placeholder="Input a valid username" maxlength="20" id="signin-username" required>
 
 									</div>
 									<div class="form-group">

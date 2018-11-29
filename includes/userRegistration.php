@@ -7,11 +7,11 @@ $_SESSION['logged-in'] = (!isset($_SESSION['logged-in'])) ? false : $_SESSION['l
 $_SESSION['loginFailed'] = (!isset($_SESSION['loginFailed'])) ? false : $_SESSION['loginFailed'];
 $_SESSION['username'] = (!isset($_SESSION['username'])) ? '' : $_SESSION['username'];
 $_SESSION['password'] = (!isset($_SESSION['password'])) ? '' : $_SESSION['password'];
-$_SESSION['userId'] = (!isset($_SESSION['userId'])) ? 0: $_SESSION['userId'];
+$_SESSION['userId'] = (!isset($_SESSION['userId'])) ? 0 : $_SESSION['userId'];
 $_SESSION['joinDate'] = (!isset($_SESSION['joinDate'])) ? 0 : $_SESSION['joinDate'];
 $_SESSION['moderator'] = (!isset($_SESSION['moderator'])) ? 0 : $_SESSION['moderator'];
 
-if($_SESSION['username'] === '')
+if ($_SESSION['username'] === '')
     $_SESSION['logged-in'] = false;
 if (isset($_POST['username']) and isset($_POST['password'])) {
     $username = mysqli_real_escape_string($con, $_POST['username']);
@@ -36,7 +36,6 @@ if (isset($_POST['username']) and isset($_POST['password'])) {
 	</body>';
         include "./footer.php";
 
-        //header("Location: \movies-library\error.php");
     } else {
         $query = "INSERT INTO user (u_name, u_pass) VALUES ('$username', '$en_password')";
         mysqli_query($con, $query);
@@ -54,8 +53,6 @@ if (isset($_POST['username']) and isset($_POST['password'])) {
 		</div>
 	</body>';
         include "./footer.php";
-        header("Location: \movies-library\index.php");
+//        header("Location: \movies-library\index.php");
     }
-
-
 }
